@@ -77,20 +77,20 @@
 
 	</dependencies>
 	<build>
-		<finalName>HelloWorld</finalName>
 		<plugins>
 			<!-- Eclipse project -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-eclipse-plugin</artifactId>
-				<version>2.9</version>
-				<configuration>
-					<!-- Always download and attach dependencies source code -->
-					<downloadSources>true</downloadSources>
-					<downloadJavadocs>false</downloadJavadocs>
-					<!-- Avoid type mvn eclipse:eclipse -Dwtpversion=2.0 -->
-					<wtpversion>2.0</wtpversion>
-				</configuration>
+				<artifactId>maven-jar-plugin</artifactId>
+				<executions>
+		        <execution>
+		          <id>make-a-jar</id>
+		          <phase>compile</phase>
+		          <goals>
+		            <goal>jar</goal>
+		          </goals>
+		        </execution>
+		      </executions>
 			</plugin>
 
 			<!-- Set JDK Compiler Level -->
